@@ -52,9 +52,9 @@ exports.update = function(req,res){
 
     cause.save(function(err){
         res.jsonp(cause);
-    })
+    });
 
-}
+};
 
 /**
  * Delete a cause
