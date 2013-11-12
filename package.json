@@ -1,12 +1,12 @@
 {
-    "name": "mean",
-    "description": "MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).",
+    "name": "Governmental",
+    "description":"Represenative democracy rebooted",
     "version": "0.1.0",
     "private": false,
-    "author": "Amos Haviv",
+    "author": "Ryan Stellar",
     "repository": {
         "type": "git",
-        "url": "https://github.com/linnovate/mean.git"
+        "url": "https://github.com/rstellar/governmental.git"
     },
     "engines": {
         "node": "0.10.x",
