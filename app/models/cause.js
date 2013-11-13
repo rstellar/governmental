@@ -10,25 +10,25 @@ var mongoose = require('mongoose'),
  * Cause Schema
  */
 var CauseSchema = new Schema({
-  created:{
-    type: Date,
-    default: Date.now
-  },
-  title:{
-    type: String,
-    default: '',
-    trim: true
-  },
-  stakeholders:{
-    type: String,
-    default: '',
-    trim: true
-  },
-  action:{
-    type: String,
-    default:'',
-    trim: true
-  }
+    created:{
+      type: Date,
+      default: Date.now
+    },
+    title:{
+      type: String,
+      default: '',
+      trim: true
+    },
+    stakeholders:{
+      type: String,
+      default: '',
+      trim: true
+    },
+    action:{
+      type: String,
+      default:'',
+      trim: true
+    }
 });
 
 
@@ -36,3 +36,4 @@ var CauseSchema = new Schema({
 
 
 //Statics
+mongoose.model('Cause', CauseSchema);

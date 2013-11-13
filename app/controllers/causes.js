@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose'),
     async = require('async'),
-    Cause = mongoose.model('cause'),
+    Cause = mongoose.model('Cause'),
     _ = require('underscore');
 
 
