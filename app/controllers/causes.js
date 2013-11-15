@@ -67,3 +67,16 @@ exports.update = function(req,res){
  /**
  * List of causes
  */
+
+exports.all = function(req, res){
+
+    Cause.find().sort('-created').populate('user','name username').exec(function(err, causes) {
+        if (err) {
+            res.render('error', {
+                status: 500
+            });
+        } else {
+            res.jsonp(causes);
+        } 
+    });
+};

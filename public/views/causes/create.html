@@ -1,10 +1,17 @@
 <section data-ng-controller="CausesController">
   <form class="form-horizontal" data-ng-submit="create()">
     <div class="control-group">
-      <label class="control-label" for="title">Title</lable>
+      <label class="control-label" for="title">Cause Name:</label>
         <div class="controls">
           <input type="text" data-ng-model="title" id="title" placeholder="Title" required>
         </div>
+
+        <div class="controls">
+          <label for="Description">Description</label>
+          <textarea type="text" data-ng-model="description" id="description" cols="30" rows="10" placeholder="Description" required></textarea>
+          <input type="submit" class="btn" value="Submit Cause Description"/>
+        </div>  
+        
     </div>
   </form>
 </section>

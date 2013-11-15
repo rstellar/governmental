@@ -19,14 +19,9 @@ var CauseSchema = new Schema({
       default: '',
       trim: true
     },
-    stakeholders:{
+    description:{
       type: String,
       default: '',
-      trim: true
-    },
-    action:{
-      type: String,
-      default:'',
       trim: true
     }
 });

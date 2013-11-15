@@ -20,6 +20,9 @@ window.app.config(['$routeProvider',
         when('/causes/', {
             templateUrl: 'views/causes/list.html'
         }).
+        when('/causes/create', {
+            templateUrl: 'views/causes/create.html'
+        }).
         otherwise({
             redirectTo: '/'
         });

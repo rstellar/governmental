@@ -1,13 +1,13 @@
-angular.module('mean.causes').controller('CausesController',['$scope','$routeParams', '$location', 'Global',
-  'Causes', function ($scope, $routeParams, $location, Global, Causes){
-    $scope.global= Global;
+angular.module('mean.causes').controller('CausesController',['$scope','$routeParams', '$location', 'Global', 'Causes', function ($scope, $routeParams, $location, Global, Causes){
+ 
+    $scope.global = Global;
 
     $scope.create = function(){
         var cause = new Causes({
           title: this.title,
-          content: this.content
+          content: this.description
         });
-        article.$save(function(res){
+        cause.$save(function(res){
             $location.path("causes/"+res._id);
         });
 

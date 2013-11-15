@@ -1,10 +1,10 @@
-//Causes service used for causes REST endpoing
+//Causes service used for causes REST endpoint
 angular.module('mean.causes').factory("Causes", ['$resource',function($resource){
-  return $resource('cause/:causeId',{
-    causeId: '@_id'
-  }, {
-    update:{
-      method: 'PUT'
-    }
-  });
+    return $resource('causes/:causeId',{
+      causeId: '@_id'
+    }, {
+      update:{
+        method: 'PUT'
+      }
+    });
 }]);

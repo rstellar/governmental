@@ -71,9 +71,9 @@ module.exports = function(app, passport, auth) {
     app.del('/articles/:articleId', auth.requiresLogin, auth.article.hasAuthorization, articles.destroy);
 
     //Cause Routes
-    var causes = require('../app/controllers/causes.js');
-    app.get('/causes', causes.all);
-    app.post('/causes', auth.requiresLogin, articles.create);
+    var causes = require('../app/controllers/causes');
+    app.get('/causes', auth.requiresLogin, causes.all);
+    app.post('/causes', auth.requiresLogin, causes.create);
 
 
 
