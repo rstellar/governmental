@@ -4,14 +4,14 @@
 var mongoose = require('mongoose'),
     async = require('async'),
     Cause = mongoose.model('Cause'),
-    _ = require('underscore');
+    _ = require('underscore'),
+    path = require('path');;
 
 
 
 /**
  * Find cause by id
  */
-
 exports.cause = function(res, req, next, id){
   Cause.load(id, function(){
     if (err) return next(err);
@@ -24,7 +24,6 @@ exports.cause = function(res, req, next, id){
  /**
  * Create a cause
  */
-
 exports.create = function(req, res){
     var cause = new Cause(req.body);
     cause.user = req.user;
@@ -44,7 +43,6 @@ exports.create = function(req, res){
  /**
  * Update a cause
  */
-
 exports.update = function(req,res){
     var cause = req.cause;
 
@@ -60,9 +58,14 @@ exports.update = function(req,res){
  * Delete a cause
  */
 
+exports.delete = function(req,res){
+};
  /**
  * Show a cause
  */
+exports.show = function(req,res){
+    res.jsonp(req.article);
+};
 
  /**
  * List of causes

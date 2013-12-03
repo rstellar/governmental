@@ -1,0 +1,10 @@
+<section data-ng-controller="CausesController" data-ng-init="findOne()">
+    <div class="row">
+        <h3>{{cause.title}}</h3>    
+        <span>{{cause.user}}</span>
+        <img ng-src="http://www.statefarm.com/aboutus/_pressreleases/2012/february/29/CaE_disc-inline.png"/>
+        <span>{{cause.created}}</span>
+    </div>
+    
+    <div ng-sparkline ng-city="San Francisco"></div>
+</section>  

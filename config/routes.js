@@ -74,6 +74,8 @@ module.exports = function(app, passport, auth) {
     var causes = require('../app/controllers/causes');
     app.get('/causes', auth.requiresLogin, causes.all);
     app.post('/causes', auth.requiresLogin, causes.create);
+    app.get('/causes/:causeId', auth.requiresLogin, causes.show);
+    app.put('/causes/:causeId', causes.show);
 
 
 

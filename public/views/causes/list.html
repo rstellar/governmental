@@ -1,11 +1,14 @@
 <section data-ng-controller="CausesController" data-ng-init="find()">
-    <ul class="causes unstyled">
-        <li data-ng-repeat="cause in causes">
+    <div>Search: <input ng-model="query" placeholder="What will you take action on?"></div>
+
+    <div class="row">
+        <div class="span4" data-ng-repeat="cause in causes | filter:query">
+            <h3><a ng-href="#!/causes/{{cause._id}}">{{cause.title}}</a></h3>
+            
+            <span>{{cause.user}}</span>
+            <img class="thumbnail" ng-src="http://www.statefarm.com/aboutus/_pressreleases/2012/february/29/CaE_disc-inline.png"/>
             <span>{{cause.created}}</span>
-            <span>{{cause.created}}</span>
-            <h2><a>
-                TITLE
-            </a></h2>
-        </li>
-    </ul>
-</section>
+        </div>
+        <div ng-sparkline></div>
+    </div>
+</section>  

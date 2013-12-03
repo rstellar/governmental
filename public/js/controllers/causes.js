@@ -5,7 +5,7 @@ angular.module('mean.causes').controller('CausesController',['$scope','$routePar
     $scope.create = function(){
         var cause = new Causes({
           title: this.title,
-          content: this.description
+          content: this.content
         });
         cause.$save(function(res){
             $location.path("causes/"+res._id);
@@ -13,7 +13,7 @@ angular.module('mean.causes').controller('CausesController',['$scope','$routePar
 
         this.title = "";
         this.content ="";
-    }
+    };
 
     $scope.find = function(){
         Causes.query(function(causes){
@@ -21,4 +21,11 @@ angular.module('mean.causes').controller('CausesController',['$scope','$routePar
         });
     };
 
+    $scope.findOne = function() {
+        Causes.get({
+            causeId: $routeParams.causeId
+        }, function(cause) {
+            $scope.cause = cause;
+        });
+    };
 }]);

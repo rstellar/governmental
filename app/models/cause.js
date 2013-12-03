@@ -10,20 +10,20 @@ var mongoose = require('mongoose'),
  * Cause Schema
  */
 var CauseSchema = new Schema({
-    created:{
-      type: Date,
-      default: Date.now
-    },
-    title:{
-      type: String,
-      default: '',
-      trim: true
-    },
-    description:{
-      type: String,
-      default: '',
-      trim: true
-    }
+      created:{
+        type: Date,
+        default: Date.now
+      },
+      title:{
+        type: String,
+        default: '',
+        trim: true
+      },
+      content:{
+        type: String,
+        default: '',
+        trim: true
+      }
 });
 
 
