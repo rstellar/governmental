@@ -5,19 +5,20 @@ app.directive('ngSparkline', function(){
 
     return {
         restrict: 'A',
-        require: '^ngCity',
-        template: '<div class="sparkline"><div ng-transclude></div><div class="graph"></div><div>',
+        template: '<div class="sparkline"><div></div><div class="graph"></div></div>',
         scope: {
-            ngCity: '@'
+            ngCity: '=',
+            weather: '='
         },
 
         controller: ['$scope', '$http', function($scope, $http){
             $scope.getTemp = function(city) {
+                console.log("Test");
                 $http({
                     method: 'JSONP',
                     url: url+city
                 }).success(function(data){
-                      
+                    console.log("THIS IS TEMP", $scope.weather)
                     var weather = [];
 
                     angular.forEach(data.list, function(value){
@@ -26,20 +27,23 @@ app.directive('ngSparkline', function(){
 
                     $scope.weather = weather;
                 });
+                
             }
         }],
 
         link: function(scope, iElement, iAttrs, ctrl){
-            
+            console.log("scope :",scope);
+
             scope.getTemp(iAttrs.ngCity);
             
-            $scope.$watch('weather', function(newVal){
+            scope.$watch('weather', function(newVal){
                 if(newVal) {
                     var high = [],
                         height = 50,
                         width = 50;
+                        console.log("There is a newval");
 
-                    angular.forEach($scope.weather, function(value){
+                    angular.forEach(scope.weather, function(value){
                         high.push(value.temp.max);
                     });
 
@@ -96,8 +100,8 @@ app.directive('ngSparkline', function(){
     }   
 });
 
-app.directive('ngCity', function(){
-    return {
-        controller: function($scope){}
-    }
-});
+// app.directive('ngCity', function(){
+//     return {
+//         controller: function($scope){}
+//     }
+// });
